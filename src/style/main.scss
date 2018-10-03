@@ -1,41 +1,40 @@
-html {
-    font-size: 62.5%; // 1rem is 10px
-}
-
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    font-family: 'montserrat';
-}
-
-body {
-    background-color: rgba(207, 207, 207, 0.06);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.app {
-    margin-top: 2rem;
-    display: grid;
-    justify-items: center;
-}
-
 .home {
+    position: relative;
+
     background-color: rgba(207, 207, 207, 0.06);
     display: grid;
 
     justify-items: center;
-    // align-items: center;
+    //align-items: center;
     grid-template-rows: [header-s] 218px [header-e card-s] minmax(736px, 994px) [card-e]
 }
 
 .header {
     align-self: center;
+    &__skew{
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 50%);
+        clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 50%);
+        
+        z-index: -10;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        height: 110vh;
+        width: 100vw;
+        background-color: #444444;
+    }
+     &__border {
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 50%);
+        clip-path: polygon(0 48%, 100% 23%, 100% 25%, 0 50%);
+        
+        z-index: -10;
+        top: 0;
+        left: 0;
+        position: absolute;
+        height: 110vh;
+        width:100vw;
+        background-color: #00CB79
+    }
 }
 
 .card {
@@ -61,7 +60,7 @@ body {
     .input {
         display: grid;
         grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-columns: [number-s] 26px [number-e input-s] 1fr [input-e]
+        grid-template-columns: [number-s] 26px [number-e input-s] 1fr [input-e];
         
         &__title {
             grid-column: input-s/input-e;
