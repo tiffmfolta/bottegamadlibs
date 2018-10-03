@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 import Input from './input';
 
-class Card extends Components {
+class Card extends Component {
     
     constructor() {
         super()
 
         this.state = {
-            color: '',
+            color: 'BLUE',
             pluralNoun: ''
         }
     }
@@ -21,16 +21,16 @@ class Card extends Components {
 
         return (
             <div className="card">
-                <h1>{this.state.color}p</h1>
-                <Input/>
+                <h1>{this.state.color}</h1>
+                <input/>
             </div>
         )
 
         return (
             <div className="card">
-            <h1>{this.state.color}</h1>
-            { Input('Color') }
-            { Input('Plural Noun') }
+                <h1>{this.state.color}</h1>
+                { Input('Color') }
+                { Input('Plural Noun') }
             </div>
         )
     }
